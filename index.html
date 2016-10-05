@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>VSTDA</title>
+<!-- bower:css -->
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+<!-- endbower -->
+
+<!-- inject:css -->
+<link rel="stylesheet" href="/styles/styles.css">
+<!-- endinject -->
+</head>
+
+<body>
+  <body ng-controller= "mainController">
+  <div class = "container">
+    
+     <div class="col-md-4">
+     <div class = "form-group">
+          <label for="text">Text</label>
+          <input ng-model ="userInput" ng-model = "array" name="text" type="text" id="enterAmount" class="form-control"> 
+                  
+        </div>
+        <div class = "form-group">
+              <label for="Priority">Priority</label>
+              <select ng-model = "priorityColor" id="select" class= "form-control">
+              <option value="1">High</option>
+              <option value="2">Medium</option>
+              <option value="3">Low</option>
+              </select>
+          </div>
+          <div class = "form-group">
+          <button ng-click = "addtodolist()" type='button' class= 'btn btn-primary'>AddToDo!</button>
+          </div> 
+          </div>     
+    <div class = "col-md-8">
+    <button type='button' ng-click ="display= 'priority'"  class= 'btn btn-success'>OrderbyHighest!</button>
+    <button type='button'  ng-click ="display= '- priority'"  class= 'btn btn-warning'>Orderbylowest!</button>
+    <button type='button' ng-click ="display= 'task'" class= 'btn btn-danger'>OrderAlphabetically!</button>
+    <div class ="col-md-12">
+    <table class = "table">
+        <tr>
+        
+          <th>
+          <div class = "col-sm-6">
+            Task name
+            </th>
+            </div>
+            <th>
+            <div class = "col-sm-6"> 
+            Priority
+            </th>
+            </div>
+        </tr>  
+        <tr ng-repeat = "elements in arr | orderBy : display">
+            <td>{{elements.task}} </td>
+            <td>{{elements.priority}}</td>
+        </tr>
+    </table>
+    </div>
+    </div> 
+    </div>
+    
+    
+      
+
+     
+  </div>
+
+
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<!-- endbower -->
+<!-- inject:js -->
+<script src="/app/app.js"></script>
+<!-- endinject -->
+</body>
+</html>

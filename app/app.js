@@ -1,7 +1,11 @@
 var myApp = angular.module('myApp', []);
 
 myApp.controller('mainController',['$scope', function($scope){
-  $scope.arr = [];
+  $scope.income = [];
+  $scope.expense = [];
+  $scope.output = 0;
+  $scope.output = 0;
+  
 
   $scope.addtodolist = function (){ 
   $scope.arr.push ({

@@ -5,7 +5,7 @@ myApp.controller('mainController',['$scope', function($scope){
   $scope.expense = [];
   $scope.output = 0;
   $scope.output = 0;
-  
+  $scope.arr = [];
 
   $scope.addtodolist = function (){ 
   $scope.arr.push ({
